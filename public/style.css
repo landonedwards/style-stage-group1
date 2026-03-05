@@ -697,8 +697,8 @@ nav ul li {
   position: relative;
   width: 200px;
   height: 120px;
-  color: white;
-  background-color: #ffcfdf;
+  color: #4a3b52;
+  background-color: #bfe6ff;
   border-radius: 60% 40% 40% 60%/50% 50% 50% 50%;
   box-shadow: inset -5px -10px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -717,9 +717,20 @@ nav ul li {
 }
 [class^=link]:not(.link-codepen):hover {
   animation: egg-shake 1s ease-in-out;
+  transform: translate(-0.15em, -0.15em);
+  box-shadow: 0.3em 0.3em #4a3b52;
 }
 [class^=link]:not(.link-codepen):hover::after {
   opacity: 1;
+}
+[class^=link]:not(.link-codepen).link-guidelines {
+  background-color: #baffc9;
+}
+[class^=link]:not(.link-codepen).link-downloadcss {
+  background-color: #e2ceff;
+}
+[class^=link]:not(.link-codepen).link-downloadhtml {
+  background-color: #ffcfdf;
 }
 
 [class^=link]:not(.link-codepen),
@@ -734,12 +745,6 @@ nav ul li {
   line-height: 1;
   text-align: center;
   text-decoration: none;
-}
-[class^=link]:not(.link-codepen):hover, [class^=link]:not(.link-codepen):focus,
-.profile .container > a:hover,
-.profile .container > a:focus {
-  transform: translate(-0.15em, -0.15em);
-  box-shadow: 0.3em 0.3em var(--color-secondary);
 }
 [class^=link]:not(.link-codepen):focus,
 .profile .container > a:focus {
@@ -785,5 +790,5 @@ nav ul li {
   width: 1em;
   height: 1em;
   margin-right: 0.25em;
-  fill: currentColor;
+  fill: darkblue;
 }

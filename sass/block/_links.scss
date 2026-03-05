@@ -32,8 +32,8 @@
   position: relative;
   width: 200px;
   height: 120px;
-  color: white;
-  background-color: $egg-pink;
+  color: $egg-text;
+  background-color: $egg-blue;
   // separated radius into horizontal / vertical for egg shape
   border-radius: 60% 40% 40% 60% / 50% 50% 50% 50%;
   // adds shading to egg
@@ -51,7 +51,7 @@
     background: #000;
     opacity: 0;
 
-    // draws a thing zig-zag down the middle of the egg using (x, y) coordinates
+    // draws a thin zig-zag down the middle of the egg using (x, y) coordinates
     clip-path: polygon(48% 0%, 52% 20%, 47% 45%, 53% 70%, 49% 100%, 
                        50% 100%, 54% 70%, 48% 45%, 53% 20%, 49% 0%);
     transition: opacity 0.2s ease;
@@ -63,6 +63,21 @@
     &::after {
       opacity: 1;
     }
+
+    transform: translate(-0.15em, -0.15em);
+    box-shadow: 0.3em 0.3em $egg-text;
+  }
+
+  &.link-guidelines {
+    background-color: $egg-mint;
+  }
+
+  &.link-downloadcss {
+    background-color: $egg-purple;
+  }
+
+  &.link-downloadhtml {
+    background-color: $egg-pink;
   }
 }
 
@@ -78,12 +93,6 @@
   line-height: 1;
   text-align: center;
   text-decoration: none;
-
-  &:hover,
-  &:focus {
-    transform: translate(-0.15em, -0.15em);
-    box-shadow: 0.3em 0.3em var(--color-secondary);
-  }
 
   &:focus {
     outline-color: transparent;
@@ -131,6 +140,6 @@
     width: 1em;
     height: 1em;
     margin-right: 0.25em;
-    fill: currentColor;
+    fill: darkblue;
   }
 }
