@@ -220,6 +220,23 @@ article section {
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
+article section ol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  width: 100%;
+  justify-content: center;
+  place-items: start;
+  padding-left: 0px;
+  gap: 15px;
+}
+article section ol li {
+  list-style-position: inside;
+  padding: 0px 5px 0px 5px;
+}
+article section ol li:nth-child(1) {
+  margin-top: 15px;
+}
 
 article .container,
 .page-footer .container,
@@ -731,6 +748,9 @@ nav ul li {
 }
 [class^=link]:not(.link-codepen).link-downloadhtml {
   background-color: #ffcfdf;
+}
+[class^=link]:not(.link-codepen).link-allstyles {
+  background-color: #ffdfba;
 }
 
 [class^=link]:not(.link-codepen),

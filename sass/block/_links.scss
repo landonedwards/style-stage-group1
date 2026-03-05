@@ -79,6 +79,10 @@
   &.link-downloadhtml {
     background-color: $egg-pink;
   }
+
+  &.link-allstyles {
+    background-color: $egg-orange;
+  }
 }
 
 [class^="link"]:not(.link-codepen),

@@ -25,6 +25,29 @@ article {
     align-items: flex-start;
     padding-top: 5vh;
     padding-bottom: 5vh;
+
+    // styles Steps to Contribute list
+    ol {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      width: 100%;
+      justify-content: center;
+      place-items: start;
+      padding-left: 0px;
+      gap: 15px;
+
+      li {
+        // forces numbers to be on the inside of their containers
+        list-style-position: inside;
+        padding: 0px 5px 0px 5px;
+
+        // makes the first list element in the ol even with the others
+        &:nth-child(1) {
+          margin-top: 15px;
+        }
+      }
+    }
   }
 }
 
