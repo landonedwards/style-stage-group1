@@ -37,10 +37,12 @@ h2 {
 
 #main h2 {
   font-family: "Quicksand", sans-serif;
-  background-color: var(--color-secondary);
+  background: linear-gradient(90deg, #ffe5b4 0%, #ffd6e0 40%, #d4f8e8 70%, #e0c3fc 100%);
   align-self: center;
   color: #fff;
   padding: 0.25em 0.5em;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(224,195,252,0.10);
 }
 
 h3 {
