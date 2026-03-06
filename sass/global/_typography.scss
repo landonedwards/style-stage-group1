@@ -7,21 +7,39 @@ h4 {
   margin-bottom: 0.65em;
 }
 
-h1 {
+/*h1 {
   font-size: var(--font-size-h1);
   font-size: clamp(2rem, 7vw, var(--font-size-h1));
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}*/
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: var(--font-size-h1);
+  font-size: clamp(3rem, 9vw, var(--font-size-h1));
+
+    text-shadow:
+        3px 3px 0 #FFCFDF,
+        6px 6px 0 #BFE6FF;
 }
 
-h2 {
+/*h2 {
   font-size: var(--font-size-h2);
   font-size: clamp(2rem, 4vw, var(--font-size-h2));
+  text-align: center;
+}*/
+
+h2 {
+  font-size: clamp(1.2rem, 2.5vw, var(--font-size-h2));
   text-align: center;
 }
 
 #main h2 {
+  font-family: "Quicksand", sans-serif;
   background-color: var(--color-secondary);
   align-self: center;
-  color: var(--color-background);
+  color: #fff;
   padding: 0.25em 0.5em;
 }
 
@@ -33,9 +51,16 @@ h4 {
   font-size: var(--font-size-h4);
 }
 
-p,
+
+
+/*p,
 li {
   font-size: var(--font-size-text);
+}*/
+
+p,
+li {
+  font-size: 0.7rem;
 }
 
 p {
@@ -130,4 +155,9 @@ blockquote {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-strong);
   }
+}
+
+
+#intro h2 {
+  font-size: 1rem !important;
 }
