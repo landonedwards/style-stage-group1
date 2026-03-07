@@ -4,8 +4,8 @@
   left: -10000px;
   width: 1px;
   height: 1px;
-  background-color: var(--color-secondary);
-  color: #fff;
+  background-color: $egg-purple;
+  color: $egg-text;
   font-size: 1.125rem;
   overflow: hidden;
 
@@ -115,7 +115,7 @@
 .link-codepen {
   display: block;
   margin-top: 3rem;
-  font-size: var(--font-size-h4);
+  font-size: $font-size-h4;
 
   &::before {
     position: absolute;
@@ -132,7 +132,7 @@
 }
 
 .link-allstyles {
-  font-size: var(--font-size-h4);
+  font-size: $font-size-h4;
 
   @media (max-width: 400px) {
     margin-left: 6rem;

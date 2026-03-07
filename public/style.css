@@ -676,8 +676,8 @@ nav ul li {
   left: -10000px;
   width: 1px;
   height: 1px;
-  background-color: var(--color-secondary);
-  color: #fff;
+  background-color: #e2ceff;
+  color: #4a3b52;
   font-size: 1.125rem;
   overflow: hidden;
 }
@@ -782,7 +782,7 @@ nav ul li {
 .link-codepen {
   display: block;
   margin-top: 3rem;
-  font-size: var(--font-size-h4);
+  font-size: 1.35rem;
 }
 .link-codepen::before {
   position: absolute;
@@ -798,7 +798,7 @@ nav ul li {
 }
 
 .link-allstyles {
-  font-size: var(--font-size-h4);
+  font-size: 1.35rem;
 }
 @media (max-width: 400px) {
   .link-allstyles {
