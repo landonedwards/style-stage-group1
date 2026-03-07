@@ -3,8 +3,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
+.easter-shape {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb347 60%, #ff5e62 100%);
+  box-shadow: 0 4px 16px rgba(128, 0, 255, 0.15);
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.easter-shape-2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 40% 60% 60% 40%/60% 40% 60% 40%;
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+  box-shadow: 0 4px 16px rgba(67, 206, 162, 0.15);
+  margin: 1.5rem auto;
+  display: block;
+}
+
 /* Original colors kept for reference
 $color-primary: #3a00ff !default;
+$egg-text: #4a3b52 !default;
+$egg-pink: #ffcfdf !default;
+$egg-mint: #baffc9 !default;
+$egg-purple: #e2ceff !default;
 $color-primary-alt: #6f6ffd !default;
 $color-secondary: #d42257 !default;
 $color-background: #d2fbf7 !default;
@@ -120,10 +144,12 @@ h2 {
 
 #main h2 {
   font-family: "Quicksand", sans-serif;
-  background-color: var(--color-secondary);
+  background: linear-gradient(90deg, #ffe5b4 0%, #ffd6e0 40%, #d4f8e8 70%, #e0c3fc 100%);
   align-self: center;
   color: #fff;
   padding: 0.25em 0.5em;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(224, 195, 252, 0.1);
 }
 
 h3 {
@@ -705,8 +731,8 @@ nav ul li {
   left: -10000px;
   width: 1px;
   height: 1px;
-  background-color: #e2ceff;
-  color: #4a3b52;
+  background-color: #E2CEFF;
+  color: #4A3B52;
   font-size: 1.125rem;
   overflow: hidden;
 }
@@ -743,7 +769,7 @@ nav ul li {
   position: relative;
   width: 200px;
   height: 120px;
-  color: #4a3b52;
+  color: #4A3B52;
   background-color: #bfe6ff;
   border-radius: 60% 40% 40% 60%/50% 50% 50% 50%;
   box-shadow: inset -5px -10px 15px rgba(0, 0, 0, 0.1);
@@ -764,19 +790,19 @@ nav ul li {
 [class^=link]:not(.link-codepen):hover {
   animation: egg-shake 1s ease-in-out;
   transform: translate(-0.15em, -0.15em);
-  box-shadow: 0.3em 0.3em #4a3b52;
+  box-shadow: 0.3em 0.3em #4A3B52;
 }
 [class^=link]:not(.link-codepen):hover::after {
   opacity: 1;
 }
 [class^=link]:not(.link-codepen).link-guidelines {
-  background-color: #baffc9;
+  background-color: #bfe6ff;
 }
 [class^=link]:not(.link-codepen).link-downloadcss {
-  background-color: #e2ceff;
+  background-color: #E2CEFF;
 }
 [class^=link]:not(.link-codepen).link-downloadhtml {
-  background-color: #ffcfdf;
+  background-color: #FFCFDF;
 }
 [class^=link]:not(.link-codepen).link-allstyles {
   background-color: #ffdfba;
@@ -835,6 +861,23 @@ nav ul li {
   }
 }
 
+.link-github {
+  background: linear-gradient(90deg, #ffe5b4 0%, #ffd6e0 40%, #d4f8e8 70%, #e0c3fc 100%);
+  color: #7c4dff;
+  padding: 0.5em 1.2em;
+  border-radius: 2em;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 8px rgba(224, 195, 252, 0.1);
+  transition: filter 0.2s;
+  filter: brightness(1);
+  text-decoration: none;
+}
+.link-github:hover, .link-github:focus {
+  filter: brightness(1.1);
+}
 .link-github svg {
   width: 1em;
   height: 1em;
