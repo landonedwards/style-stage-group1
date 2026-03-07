@@ -18,6 +18,10 @@ header {
   }
 
   h2 {
-    max-width: 30ch;
+    max-width: 40ch;
+    font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    text-align: center;
   }
 }

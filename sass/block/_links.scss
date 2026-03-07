@@ -140,6 +140,23 @@
 }
 
 .link-github {
+  background: linear-gradient(90deg, #ffe5b4 0%, #ffd6e0 40%, #d4f8e8 70%, #e0c3fc 100%);
+  color: #7c4dff;
+  padding: 0.5em 1.2em;
+  border-radius: 2em;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 8px rgba(224,195,252,0.10);
+  transition: filter 0.2s;
+  filter: brightness(1);
+  text-decoration: none;
+
+  &:hover, &:focus {
+    filter: brightness(1.1);
+  }
+
   svg {
     width: 1em;
     height: 1em;

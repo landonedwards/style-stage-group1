@@ -1,18 +1,13 @@
 #guidelines {
   h3 {
-    display: inline-block;
-    transform: rotate(-8deg) translateX(-10%);
-    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-
-    @supports (background-clip: text) or (-webkit-background-clip: text) {
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    @media (min-width: 120ch) {
-      transform: rotate(-8deg) translateX(-30%);
-    }
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: var(--font-weight-strong);
+    color: var(--color-primary);
+    background: none;
+    transform: none;
+    display: block;
+    margin-bottom: 0.65em;
   }
 
   @supports (background-clip: text) or (-webkit-background-clip: text) {
