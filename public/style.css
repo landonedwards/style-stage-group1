@@ -37,8 +37,8 @@ $color-background: #d2fbf7 !default;
   --color-primary: #b59add;
   --color-primary-alt: #BFE6FF;
   --color-secondary: #e1b3c2;
-  --color-background: #BEEFBF;
-  --color-text: #7d65a2;
+  --color-background: #E6F6E8;
+  --color-text: #89669c;
   --color-light: #fff;
   --color-anchor: #b59add;
   --font-family: "Baloo 2",
@@ -129,6 +129,7 @@ h1 {
   font-family: "Great Vibes", cursive;
   font-size: var(--font-size-h1);
   font-size: clamp(3rem, 9vw, var(--font-size-h1));
+  color: var(--color-text);
   text-shadow: 3px 3px 0 #FFCFDF, 6px 6px 0 #BFE6FF;
 }
 
@@ -138,7 +139,7 @@ h1 {
   text-align: center;
 }*/
 h2 {
-  font-size: clamp(1.2rem, 2.5vw, var(--font-size-h2));
+  font-size: clamp(1.5rem, 3vw, var(--font-size-h2));
   text-align: center;
 }
 
@@ -146,7 +147,7 @@ h2 {
   font-family: "Quicksand", sans-serif;
   background: linear-gradient(90deg, #ffe5b4 0%, #ffd6e0 40%, #d4f8e8 70%, #e0c3fc 100%);
   align-self: center;
-  color: #fff;
+  color: var(--color-text);
   padding: 0.25em 0.5em;
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(224, 195, 252, 0.1);
@@ -166,7 +167,8 @@ li {
 }*/
 p,
 li {
-  font-size: 0.7rem;
+  font-size: clamp(1rem, 0.9rem + 0.3vw, var(--font-size-text));
+  line-height: 1.5;
 }
 
 p {
@@ -219,6 +221,7 @@ blockquote::before {
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--color-light);
   border: 4px solid var(--color-primary);
   box-shadow: 0.25em 0.25em var(--color-secondary);
   transform: scale(1.1);
@@ -250,7 +253,7 @@ blockquote::after {
 }
 
 #intro h2 {
-  font-size: 1rem !important;
+  font-size: clamp(1.4rem, 2.2vw, 2rem) !important;
 }
 
 body {
@@ -453,54 +456,32 @@ nav ul li {
   align-self: center;
 }
 
-#about section:nth-child(2) {
-  position: relative;
-}
-
-#about section:nth-child(2) p:nth-of-type(2) {
-  align-self: center;
-  margin-top: 2rem;
+#contribute section:nth-child(1) p:nth-of-type(1) {
   color: var(--color-secondary);
-  font-size: 1.5em;
   font-weight: var(--font-weight-strong);
-  text-align: center;
+  font-size: var(--font-size-h4);
 }
-
-#about section:nth-child(2) ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem 0 2rem;
-  padding: 0;
-  list-style: none;
-}
-
-#about section:nth-child(2) ul li {
-  margin: 0.25em;
-  padding: 0.25em 0.5em;
-  background-color: var(--color-light);
-}
-
-#about section:nth-child(2)::before {
-  position: absolute;
-  top: 60%;
-  left: 50%;
+#contribute section:nth-child(2) ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
   width: 100%;
-  height: 0;
-  padding-bottom: 100%;
-  transform: translate(-50%, -50%);
-  transition: 300ms transform ease-in;
-  background-image: radial-gradient(rgba(255, 0, 0, 0) 20%, #b3f8f1 20%, #b3f8f1 25%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 30%, #b3f8f1 30%, #b3f8f1 40%, rgba(255, 0, 0, 0) 40%, rgba(255, 0, 0, 0) 45%, #b3f8f1 45%, #b3f8f1 50%, rgba(255, 0, 0, 0) 50%);
-  opacity: 0.8;
-  content: "";
-  z-index: -1;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
 }
-
-@media (max-width: 35rem) {
-  #about section:nth-child(2)::before {
-    transform: scale(2) translate(-25%, -25%);
+#contribute section:nth-child(2) li {
+  padding: 0.9rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-light);
+  box-shadow: 0 0 0 2px rgba(181, 154, 221, 0.2);
+}
+@media (max-width: 42rem) {
+  #contribute section:nth-child(2) ol {
+    grid-template-columns: 1fr;
   }
 }
+
 #files {
   display: grid;
   place-content: center;
@@ -585,7 +566,7 @@ nav ul li {
 }
 @media (min-width: 515px) and (max-width: 765px) {
   #styles .features li:nth-last-child(1):nth-child(odd),
-.features.patterned li:nth-last-child(1):nth-child(odd) {
+  .features.patterned li:nth-last-child(1):nth-child(odd) {
     grid-column: span 2;
   }
 }
@@ -711,6 +692,7 @@ nav ul li {
 }
 .page-footer p:first-child {
   margin-top: 3rem;
+  font-size: 1.25rem;
   font-weight: var(--font-weight-strong);
   letter-spacing: 0.03em;
   text-align: center;
@@ -789,11 +771,13 @@ nav ul li {
 }
 [class^=link]:not(.link-codepen):hover {
   animation: egg-shake 1s ease-in-out;
-  transform: translate(-0.15em, -0.15em);
-  box-shadow: 0.3em 0.3em #4A3B52;
 }
 [class^=link]:not(.link-codepen):hover::after {
   opacity: 1;
+}
+[class^=link]:not(.link-codepen):hover {
+  transform: translate(-0.15em, -0.15em);
+  box-shadow: 0.3em 0.3em #4A3B52;
 }
 [class^=link]:not(.link-codepen).link-guidelines {
   background-color: #bfe6ff;

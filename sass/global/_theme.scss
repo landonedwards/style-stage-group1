@@ -18,13 +18,12 @@ $egg-mint: #BAFFC9 !default;
 $egg-purple: #E2CEFF !default;
 $egg-blue: #bfe6ff !default;
 $egg-orange: #ffdfba !default;
-$color-background: #BEEFBF !default;
+$color-background: #E6F6E8 !default;
 
 // Map project colors to the Easter palette
 $color-primary: #b59add !default;
 $color-primary-alt: #BFE6FF !default;
 $color-secondary: #e1b3c2 !default;
-$color-background: #EAFBF0 !default; 
 
 $brand-colors: (
   primary: $color-primary,
@@ -32,9 +31,7 @@ $brand-colors: (
   secondary: $color-secondary,
   ) !default;
 
-$color-body: scale-color($color-primary,
-    $lightness: -30%,
-    $saturation: -50%) !default;
+$color-body: #89669c !default;
 
 $color-gray: mix(#767676, $color-body, 70%) !default;
 
