@@ -337,6 +337,7 @@ header h1 {
   border: 0.16em solid var(--color-primary);
   box-shadow: 0.12em 0.12em var(--color-secondary);
   place-content: center;
+  background-color: white;
 }
 header h2 {
   max-width: 40ch;
@@ -703,6 +704,7 @@ nav ul a {
   border: 0.16em solid var(--color-primary);
   box-shadow: 0.12em 0.12em var(--color-secondary);
   place-content: center;
+  background-color: white;
   position: absolute;
   left: 50%;
   width: 2em;
