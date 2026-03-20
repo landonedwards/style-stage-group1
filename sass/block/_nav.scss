@@ -50,3 +50,13 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 550px) {
+  nav {
+    position: relative;
+
+    ul {
+      flex-direction: column;
+    }
+  }
+}
