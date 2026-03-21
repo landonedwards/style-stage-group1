@@ -54,13 +54,6 @@ h4 {
   font-size: var(--font-size-h4);
 }
 
-
-
-/*p,
-li {
-  font-size: var(--font-size-text);
-}*/
-
 p,
 li {
   font-size: clamp(1rem, calc(0.9rem + 0.3vw), var(--font-size-text));

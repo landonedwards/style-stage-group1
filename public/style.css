@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
@@ -157,10 +156,6 @@ h4 {
   font-size: var(--font-size-h4);
 }
 
-/*p,
-li {
-  font-size: var(--font-size-text);
-}*/
 p,
 li {
   font-size: clamp(1rem, calc(0.9rem + 0.3vw), var(--font-size-text));
@@ -410,6 +405,14 @@ nav ul a {
     flex-direction: column;
   }
 }
+@keyframes flower-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 #about section:nth-child(2) {
   position: relative;
 }
@@ -436,21 +439,25 @@ nav ul a {
 }
 #about section:nth-child(2)::before {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   width: 100%;
-  height: 0;
-  padding-bottom: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  transition: 300ms transform ease-in;
-  background-image: radial-gradient(rgba(255, 0, 0, 0) 20%, #b3f8f1 20%, #b3f8f1 25%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 30%, #b3f8f1 30%, #b3f8f1 40%, rgba(255, 0, 0, 0) 40%, rgba(255, 0, 0, 0) 45%, #b3f8f1 45%, #b3f8f1 50%, rgba(255, 0, 0, 0) 50%);
-  opacity: 0.8;
   content: "";
   z-index: -1;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-200 -200 400 400'%3E%3Cg%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(0 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(22.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(45 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(67.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(90 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(112.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(135 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(157.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(180 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(202.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(225 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(247.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(270 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(292.5 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(315 0 0)'/%3E%3Cellipse cx='0' cy='-82' rx='28' ry='90' fill='%23E2CEFF' stroke='%23b59add' stroke-width='2' transform='rotate(337.5 0 0)'/%3E%3C/g%3E%3Ccircle cx='0' cy='0' r='38' fill='%23fff0a0' stroke='%23b59add' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: 3s transform ease;
+  animation: flower-spin 70s linear infinite;
 }
 @media (max-width: 35rem) {
   #about section:nth-child(2)::before {
-    transform: scale(2) translate(-25%, -25%);
+    width: 75%;
+    height: 75%;
   }
 }
 
@@ -462,25 +469,7 @@ nav ul a {
   background: none;
   transform: none;
   display: block;
-  margin-bottom: 0.65em;
-}
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  #guidelines p:nth-of-type(2) {
-    position: relative;
-  }
-  #guidelines p:nth-of-type(2)::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(4deg) translate(4.75rem, -3.5rem);
-    transform-origin: left center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: var(--color-primary-alt);
-    font-size: 0.9em;
-    font-weight: normal;
-    content: "← Whoa, text gradients!";
-  }
+  margin-bottom: 0.3em;
 }
 #guidelines .container > a {
   align-self: center;
@@ -504,6 +493,7 @@ nav ul a {
   padding: 0.9rem 1rem;
   border-radius: var(--border-radius);
   background-color: var(--color-light);
+  border: 2px solid #FFCFDF;
   height: 160px;
   box-shadow: 0 0 0 2px rgba(181, 154, 221, 0.2);
 }
