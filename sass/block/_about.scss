@@ -11,7 +11,7 @@
     p:nth-of-type(2) {
       align-self: center;
       margin-top: 2rem;
-      color: var(--color-secondary);
+      color: $color-body;
       font-size: 1.5em;
       font-weight: var(--font-weight-strong);
       text-align: center;
@@ -21,17 +21,29 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 1rem 0 2rem;
+      margin: 0.1rem 0 2rem;
       padding: 0;
       list-style: none;
+      padding: 5px;
+      background-color: rgba(181, 154, 221, 0.5);
+;
 
       li {
         margin: 0.25em;
         padding: 0.25em 0.5em;
         background-color: var(--color-light);
+        border: 2px solid $egg-pink;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: $color-primary;
+          background-color: $egg-pink;
+          color: $egg-text;
+        }
       }
     }
 
+    // flower background 
     &::before {
       position: absolute;
       top: 50%;
@@ -48,12 +60,8 @@
       background-size: contain;
       background-position: center;
       transition: 3s transform ease;
+      // spins very slowly so it's not difficult to look at/distracting
       animation: flower-spin 70s linear infinite;
-
-      @media (max-width: 35rem) {
-        width: 75%;
-        height: 75%;
-      }
     }
   }
 }

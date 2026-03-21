@@ -1,8 +1,30 @@
+// animation for pulling eggs out of basket
+@keyframes egg-pull {
+  0%   { 
+    top: -60px; 
+    transform: rotate(-15deg); 
+  }
+  30%  { 
+    top: -80px; 
+    transform: rotate(-18deg); // tugs sideways slightly
+  }
+  60%  { 
+    top: -120px; 
+    transform: rotate(-10deg); // straightens as it lifts
+  }
+  100% { 
+    top: -160px; 
+    transform: rotate(-5deg); 
+  }
+}
+
 #files {
   display: grid;
   place-content: center;
   margin: 5vh auto;
   text-align: center;
+  position: relative;
+  z-index: 0;
 
   h3 {
     height: 0;
@@ -10,18 +32,103 @@
   }
 
   .container {
-    display: inline-block;
+    margin-top: 80px;
+    position: relative;
     padding: 5vmin;
-    outline: 4px dashed var(--color-secondary);
-    background-color: var(--color-background);
+    border: 4px solid $basket-border;
+    width: 400px;
+    height: 225px;
     text-align: center;
+    // mouse will ignore the basket and handle
+    pointer-events: none;
+    // basket shape
+    border-radius: 100% 100% 10% 10% / 40% 40% 10% 10%;
+    background: 
+    // basket filling
+    repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 8px,
+        rgba(180, 130, 60, 0.2) 8px,
+        rgba(180, 130, 60, 0.2) 10px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(180, 130, 60, 0.2) 8px,
+        rgba(180, 130, 60, 0.2) 10px
+      ),
+      #e8c97a;
 
-    a:not(:last-child) {
-      margin: 0.5rem;
+    // basket handle 
+    &::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65%;
+      height: 90px;
+      border: 8px solid $basket-border;
+      border-bottom: none;
+      border-radius: 50% 50% 0 0;
+      // so the eggs are displayed over it
+      z-index: -1;
+    }
 
-      &:not(.link-codepen) {
-        font-size: clamp(1.5rem, 4vw, 2rem);
+    // basket label
+    &::after {
+      display: block;
+      content: "Download The Source Code";
+      margin-top: 3rem;
+      font-family: "Quicksand", sans-serif;
+      font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
+      color: $egg-text;
+    }
+
+    // vertical eggs
+    a[class^="link-"]:not(.link-codepen) {
+      position: absolute;
+      width: 120px;
+      height: 170px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      top: -60px;
+      z-index: -1;
+      // re-enables interactions for eggs
+      pointer-events: auto;
+      transition: all 0.3s ease;
+      color: $egg-text;
+    }
+
+    .link-downloadhtml {
+      background-color: $egg-purple;
+      left: 90px;
+      transform: rotate(-15deg);
+
+      &:hover {
+        animation: egg-pull 0.4s ease-out forwards;
+        z-index: 3;
       }
+    }
+
+    .link-downloadcss {
+      background-color: $egg-pink;
+      right: 90px;
+      transform: rotate(15deg);
+
+      &:hover {
+        animation: egg-pull 0.4s ease-out forwards;
+        z-index: 3;
+      }
+    }
+
+    .link-codepen {
+      position: absolute;
+      bottom: -40px;
+      left: 30%;
+      z-index: 2;
+      pointer-events: auto;
     }
   }
 }
