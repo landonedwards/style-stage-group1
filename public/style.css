@@ -213,7 +213,7 @@ h4 {
 
 p,
 li {
-  font-size: clamp(1rem, 0.9rem + 0.3vw, var(--font-size-text));
+  font-size: clamp(1rem, calc(0.9rem + 0.3vw), var(--font-size-text));
   line-height: 1.5;
 }
 
@@ -599,6 +599,13 @@ nav {
   overflow: hidden;
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 nav ul li:nth-child(1) {
   animation: stage-pop-in 0.5904s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
   will-change: opacity, transform;
@@ -622,13 +629,6 @@ nav ul li:nth-child(5) {
 nav ul li:nth-child(6) {
   animation: stage-pop-in 0.5904s cubic-bezier(0.22, 1, 0.36, 1) 0.85s both;
   will-change: opacity, transform;
-}
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 nav ul li {
   flex: 1;
@@ -720,7 +720,7 @@ nav ul a {
   background: linear-gradient(135deg, #fff9fc 0%, #fff7e8 52%, #f7fff5 100%);
   box-shadow: 0 0.85rem 1.8rem rgba(181, 154, 221, 0.18);
   color: #89669c;
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  font-size: clamp(1.1rem, calc(1rem + 0.5vw), 1.35rem);
   line-height: 1.7;
   text-align: center;
   animation: stage-fade-right 0.7544s cubic-bezier(0.22, 1, 0.36, 1) 1.02s both, stage-breathe 5.5s ease-in-out 1.35s infinite;
@@ -894,7 +894,7 @@ nav ul a {
   content: "Download The Source Code";
   margin-top: 3rem;
   font-family: "Quicksand", sans-serif;
-  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+  font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
   color: #4A3B52;
 }
 #files .container a[class^=link-]:not(.link-codepen) {
@@ -1017,7 +1017,7 @@ nav ul a {
 }
 @media (min-width: 515px) and (max-width: 765px) {
   #styles .features li:nth-last-child(1):nth-child(odd),
-  .features.patterned li:nth-last-child(1):nth-child(odd) {
+.features.patterned li:nth-last-child(1):nth-child(odd) {
     grid-column: span 2;
   }
 }
@@ -1073,6 +1073,14 @@ nav ul a {
   background-color: var(--color-secondary);
   color: var(--color-light);
 }
+.profile ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .profile ul > li:nth-child(1) {
   animation: stage-pop-in 0.5248s cubic-bezier(0.22, 1, 0.36, 1) 2.08s both;
   will-change: opacity, transform;
@@ -1088,14 +1096,6 @@ nav ul a {
 .profile ul > li:nth-child(4) {
   animation: stage-pop-in 0.5248s cubic-bezier(0.22, 1, 0.36, 1) 2.32s both;
   will-change: opacity, transform;
-}
-.profile ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 .profile ul li {
   display: flex;
@@ -1213,6 +1213,9 @@ nav ul a {
 .page-footer p a {
   color: inherit;
 }
+.page-footer ul {
+  grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
+}
 .page-footer ul > li:nth-child(1) {
   animation: stage-pop-in 0.5576s cubic-bezier(0.22, 1, 0.36, 1) 2.64s both;
   will-change: opacity, transform;
@@ -1228,9 +1231,6 @@ nav ul a {
 .page-footer ul > li:nth-child(4) {
   animation: stage-pop-in 0.5576s cubic-bezier(0.22, 1, 0.36, 1) 2.88s both;
   will-change: opacity, transform;
-}
-.page-footer ul {
-  grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
 }
 .page-footer .container > :last-child {
   margin-bottom: 0;
@@ -1278,12 +1278,12 @@ nav ul a {
   clip-path: polygon(48% 0%, 52% 20%, 47% 45%, 53% 70%, 49% 100%, 50% 100%, 54% 70%, 48% 45%, 53% 20%, 49% 0%);
   transition: opacity 0.2s ease;
 }
-[class^=link]:not(.link-codepen, .link-downloadhtml, .link-downloadcss):hover::after {
-  opacity: 1;
-}
 [class^=link]:not(.link-codepen, .link-downloadhtml, .link-downloadcss):hover {
   transform: translate(-0.15em, -0.15em) rotate(-3deg);
   box-shadow: 0.3em 0.3em #4A3B52;
+}
+[class^=link]:not(.link-codepen, .link-downloadhtml, .link-downloadcss):hover::after {
+  opacity: 1;
 }
 [class^=link]:not(.link-codepen, .link-downloadhtml, .link-downloadcss).link-guidelines {
   background-color: #bfe6ff;

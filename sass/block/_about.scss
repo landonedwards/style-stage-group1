@@ -45,7 +45,7 @@
     background: linear-gradient(135deg, #fff9fc 0%, #fff7e8 52%, #f7fff5 100%);
     box-shadow: 0 0.85rem 1.8rem rgba(181, 154, 221, 0.18);
     color: $color-body;
-    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+    font-size: clamp(1.1rem, calc(1rem + 0.5vw), 1.35rem);
     line-height: 1.7;
     text-align: center;
     animation:
