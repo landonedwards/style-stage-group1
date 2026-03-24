@@ -134,3 +134,47 @@
     }
   }
 }
+
+@media (max-width: 42rem) {
+  #files {
+    margin: 3rem auto 5rem;
+
+    .container {
+      width: min(100%, 20rem);
+      height: 12.5rem;
+      margin-top: 5.5rem;
+      padding: 1rem;
+
+      &::before {
+        top: -3.8rem;
+        width: 72%;
+        height: 4.5rem;
+      }
+
+      &::after {
+        margin-top: 2.25rem;
+        font-size: clamp(1rem, calc(0.95rem + 1.2vw), 1.45rem);
+      }
+
+      a[class^="link-"]:not(.link-codepen) {
+        width: 5.25rem;
+        height: 7.75rem;
+        top: -3.5rem;
+      }
+
+      .link-downloadhtml {
+        left: 2.7rem;
+      }
+
+      .link-downloadcss {
+        right: 2.7rem;
+      }
+
+      .link-codepen {
+        left: 50%;
+        bottom: -2.2rem;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

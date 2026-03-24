@@ -150,6 +150,18 @@ article,
   padding: 1rem;
 }
 
+@media (max-width: 42rem) {
+  article,
+  #styles {
+    padding: 0.75rem;
+  }
+
+  article section {
+    padding-top: 3.5vh;
+    padding-bottom: 3.5vh;
+  }
+}
+
 .page-footer ul,
 .features {
   display: grid;

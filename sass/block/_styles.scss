@@ -97,3 +97,17 @@
     }
   }
 }
+
+@media (max-width: 42rem) {
+  .features {
+    grid-template-columns: 1fr;
+
+    li {
+      min-height: 9.5rem;
+    }
+  }
+
+  #styles {
+    margin-bottom: 6rem;
+  }
+}

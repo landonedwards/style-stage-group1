@@ -115,7 +115,7 @@
   font-size: $font-size-h4;
 
   @media (max-width: 400px) {
-    margin-left: 6rem;
+    margin-left: 0;
   }
 }
 
@@ -142,5 +142,25 @@
     height: 1em;
     margin-right: 0.25em;
     fill: darkblue;
+  }
+}
+
+@media (max-width: 42rem) {
+  [class^="link"]:not(.link-codepen, .link-downloadhtml, .link-downloadcss) {
+    width: min(100%, 12.5rem);
+    max-width: 100%;
+  }
+
+  .link-github {
+    width: auto;
+    max-width: min(100%, 14rem);
+    min-height: 4.25rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .link-codepen,
+  .link-allstyles {
+    margin-right: auto;
+    margin-left: auto;
   }
 }

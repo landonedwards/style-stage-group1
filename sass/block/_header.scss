@@ -62,3 +62,22 @@ header {
     text-align: center;
   }
 }
+
+@media (max-width: 42rem) {
+  header {
+    min-height: auto;
+    padding: 4.5rem 1rem 3rem;
+
+    h1 {
+      width: min(100%, 18rem);
+      margin-inline: auto;
+    }
+
+    h2,
+    p {
+      max-width: 22rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
