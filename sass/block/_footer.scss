@@ -10,6 +10,17 @@
   background-position: center -34px;
   color: var(--color-light);
 
+  .container {
+    @include stage-sequence(
+      "> *",
+      4,
+      stage-curtain-up,
+      2.42s,
+      0.14s,
+      stage-duration(0.9)
+    );
+  }
+
   &::before {
     @include logomark;
 
@@ -36,6 +47,15 @@
   }
 
   ul {
+    @include stage-sequence(
+      "> li",
+      4,
+      stage-pop-in,
+      2.64s,
+      0.08s,
+      stage-duration(0.68)
+    );
+
     grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
   }
 

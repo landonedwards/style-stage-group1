@@ -1,0 +1,125 @@
+@function stage-distance($multiplier: 1, $base: 1rem) {
+  @return $multiplier * $base;
+}
+
+@function stage-duration($multiplier: 1, $base: 0.82s) {
+  @return $multiplier * $base;
+}
+
+@function stage-delay($step, $base: 0s, $stagger: 0.14s) {
+  @return $base + ($step * $stagger);
+}
+
+@mixin stage-enter(
+  $animation,
+  $step: 0,
+  $base-delay: 0s,
+  $stagger: 0.14s,
+  $duration: 0.82s,
+  $timing: cubic-bezier(0.22, 1, 0.36, 1)
+) {
+  animation: $animation $duration $timing stage-delay($step, $base-delay, $stagger) both;
+  will-change: opacity, transform;
+}
+
+@mixin stage-sequence(
+  $selector,
+  $count,
+  $animation,
+  $base-delay: 0s,
+  $stagger: 0.14s,
+  $duration: 0.82s,
+  $timing: cubic-bezier(0.22, 1, 0.36, 1)
+) {
+  @for $index from 1 through $count {
+    #{$selector}:nth-child(#{$index}) {
+      @include stage-enter(
+        $animation,
+        $index - 1,
+        $base-delay,
+        $stagger,
+        $duration,
+        $timing
+      );
+    }
+  }
+}
+
+@keyframes stage-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(stage-distance(1.5)) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stage-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(stage-distance(-1.5)) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stage-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(stage-distance(-1.8)) rotate(-1.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes stage-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(stage-distance(1.8)) rotate(1.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes stage-pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(stage-distance(1.15)) scale(0.88);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(stage-distance(-0.15)) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stage-curtain-up {
+  from {
+    opacity: 0;
+    transform: translateY(stage-distance(2.1)) scaleY(0.92);
+    filter: saturate(0.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    filter: saturate(1);
+  }
+}

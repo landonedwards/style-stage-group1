@@ -19,6 +19,8 @@
 }
 
 #files {
+  @include stage-enter(stage-pop-in, 0, 1.98s, 0.12s, stage-duration(0.96));
+
   display: grid;
   place-content: center;
   margin: 5vh auto;

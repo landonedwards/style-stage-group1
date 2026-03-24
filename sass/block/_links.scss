@@ -19,16 +19,6 @@
   }
 }
 
-// shake animation for eggs
-@keyframes egg-shake {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(8deg); }
-  40% { transform: rotate(-8deg); }
-  60% { transform: rotate(5deg); }
-  80% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
-}
-
 // targets all links that aren't the codepen link
 [class^="link"]:not(.link-codepen, .link-downloadhtml, .link-downloadcss) {
   position: relative;
@@ -60,13 +50,12 @@
   }
 
   &:hover {
-    animation: egg-shake 1s ease-in-out;
     // when hovered, show the crack
     &::after {
       opacity: 1;
     }
 
-    transform: translate(-0.15em, -0.15em);
+    transform: translate(-0.15em, -0.15em) rotate(-3deg);
     box-shadow: 0.3em 0.3em $egg-text;
   }
 

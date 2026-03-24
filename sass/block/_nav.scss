@@ -3,10 +3,20 @@ nav {
   top: 0;
   z-index: 100;
   width: 100%;
+  overflow: hidden;
   // help differentiate nav from other elements
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 
   ul {
+    @include stage-sequence(
+      "li",
+      6,
+      stage-pop-in,
+      0.45s,
+      0.08s,
+      stage-duration(0.72)
+    );
+
     display: flex;
     flex-wrap: wrap;
     margin: 0;

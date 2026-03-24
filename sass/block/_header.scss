@@ -3,6 +3,7 @@ header {
   --logomark-padding: 0 1em;
 
   display: grid;
+  overflow: hidden;
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
@@ -12,6 +13,15 @@ header {
   background-position: 0 -38px, 17px -40px;
   color: var(--color-primary);
   text-align: center;
+
+  @include stage-sequence(
+    ".container > *",
+    4,
+    stage-fade-down,
+    0.12s,
+    0.16s,
+    stage-duration(1.05)
+  );
 
   h1 {
     @include logomark;
