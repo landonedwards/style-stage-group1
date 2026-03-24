@@ -521,19 +521,42 @@ article,
   list-style: none;
 }
 
+@keyframes header-triangle-scroll {
+  from {
+    background-position: 0 0, 17px 0;
+  }
+  to {
+    background-position: 72px 0, 89px 0;
+  }
+}
 header {
   --logomark-height: 3em;
   --logomark-padding: 0 1em;
   display: grid;
+  position: relative;
   overflow: hidden;
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
   color: var(--color-primary);
   text-align: center;
+}
+header::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M20 4h12L26 16 20 4z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 -2;0 1;0 0' dur='2.2s' begin='0s' repeatCount='indefinite'/%3E%3C/path%3E%3Cpath d='M56 4h12L62 16 56 4z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 1;0 -2;0 0' dur='2.2s' begin='0.9s' repeatCount='indefinite'/%3E%3C/path%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M20 2h12L26 14 20 2z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 1;0 -2;0 0' dur='2.2s' begin='0.35s' repeatCount='indefinite'/%3E%3C/path%3E%3Cpath d='M56 2h12L62 14 56 2z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 -1;0 2;0 0' dur='2.2s' begin='1.25s' repeatCount='indefinite'/%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  animation: header-triangle-scroll 6.5s linear infinite;
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+}
+header .container {
+  position: relative;
+  z-index: 1;
 }
 header .container > *:nth-child(1) {
   animation: stage-fade-down 0.861s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
@@ -1113,16 +1136,38 @@ nav ul a {
   }
 }
 
+@keyframes footer-triangle-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 72px 0;
+  }
+}
 .page-footer {
   --logomark-height: 2em;
   --logomark-padding: 0;
   position: relative;
   padding: 3rem 1rem;
   background-color: var(--color-primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d2fbf7' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center -34px;
   color: var(--color-light);
+}
+.page-footer::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Cg fill='%23d2fbf7' fill-opacity='1'%3E%3Cpath d='M20 8h12L26 20 20 8z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 -2;0 1;0 0' dur='2.2s' begin='0s' repeatCount='indefinite'/%3E%3C/path%3E%3Cpath d='M56 8h12L62 20 56 8z'%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;0 1;0 -2;0 0' dur='2.2s' begin='0.95s' repeatCount='indefinite'/%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  animation: footer-triangle-scroll 6.5s linear infinite;
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+}
+.page-footer .container {
+  position: relative;
+  z-index: 1;
 }
 .page-footer .container > *:nth-child(1) {
   animation: stage-curtain-up 0.738s cubic-bezier(0.22, 1, 0.36, 1) 2.42s both;
@@ -1156,6 +1201,7 @@ nav ul a {
   color: var(--color-primary);
   font-size: 3rem;
   content: "S";
+  z-index: 2;
 }
 .page-footer p:first-child {
   margin-top: 3rem;
